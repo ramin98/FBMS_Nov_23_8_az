@@ -1,0 +1,22 @@
+#root {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  header, footer{
+    padding: 50px;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+  
+  main{
+    text-align: center;
+    margin-bottom: auto;
+  }
+
+.active-blue{
+    background-color: blue;
+}
