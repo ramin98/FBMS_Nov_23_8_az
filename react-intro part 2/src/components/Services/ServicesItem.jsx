@@ -1,11 +1,15 @@
 import styled from "styled-components";
+import styles from "../../App.module.css";
+import styles2 from "../../style.module.css";
 
-function ServicesItem({servicesName, servicesDescription}) {
+function ServicesItem(props) {
+  console.log(styles)
+  console.log(styles2)
   return (
     <ServicesLi>
-      <ServicesName>{servicesName}</ServicesName>
-      <ServicesDescription>
-        {servicesDescription}
+      <ServicesName>{props.servicesName}</ServicesName>
+      <ServicesDescription color='red'>
+        {props.servicesDescription}
       </ServicesDescription>
     </ServicesLi>
   );
@@ -26,4 +30,7 @@ const ServicesLi = styled.li`
 
 const ServicesName = styled.h3``;
 
-const ServicesDescription = styled.p``;
+const ServicesDescription = styled.p` 
+     color:${(props) => props.color};
+`;
+
