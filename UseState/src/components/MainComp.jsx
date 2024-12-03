@@ -6,6 +6,9 @@ import { useState } from "react";
 
 function MainComp() {
   let [servicesArray, setServicesArray] = useState([...services])
+   
+  // DIGER EDIT USULU
+  // let [servicesArray, setServicesArray] = useState([...services.map((item) => ({...item,open: false}))])
 
     return (
         <MainTag>

@@ -14,8 +14,9 @@ function Services({servicesArray, setServicesArray}) {
         {servicesArray.map((item) => (
           <ServicesItem
             key={item.id}
-            servicesName={item.servicesName}
-            servicesDescription={item.servicesDescription}
+            servicesArray={servicesArray}
+            setServicesArray={setServicesArray}
+            obj={item}
           />
         ))}
       </ServicesList>
