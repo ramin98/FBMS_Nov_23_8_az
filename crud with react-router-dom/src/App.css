@@ -1,0 +1,14 @@
+#root {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.hide{
+  display: none;
+}
+
+header a{
+  color: white;
+}
