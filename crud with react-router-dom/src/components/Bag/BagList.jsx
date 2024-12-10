@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import BagItem from "./BagItem";
 
-function BagList({ bag,setId }) {
+function BagList({ bag }) {
 
 
   return (
@@ -11,7 +11,6 @@ function BagList({ bag,setId }) {
           <BagItem
             key={item.id}
             obj={item}
-            setId={setId}
           />
         ))}
       </ServicesList>

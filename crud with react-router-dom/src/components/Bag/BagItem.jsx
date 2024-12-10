@@ -1,22 +1,16 @@
 import styled from "styled-components";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function BagItem(props) {
-  let navigate = useNavigate();
   return (
     <ServicesLi>
       <ServicesName>{props.obj.servicesName}</ServicesName>
       <ServicesDescription color="red">
         {props.obj.servicesDescription}
       </ServicesDescription>
-      <button
-        onClick={() => {
-          props.setId(props.obj.id);
-          navigate("/service-page");
-        }}
-      >
+      <Link to={`/service-page/${props.obj.id}`} state={props.obj}>
         SHOW
-      </button>
+      </Link>
     </ServicesLi>
   );
 }

@@ -16,10 +16,10 @@ function Header() {
 
 export default Header
 
-const MainHeaderTag = styled.footer`
+const MainHeaderTag = styled.header`
   padding: 50px;
   background-color: black;
-  color: white;
+  color: black;
   text-align: center;
 `;
 
