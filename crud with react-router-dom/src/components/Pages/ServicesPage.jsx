@@ -3,7 +3,7 @@ import AddForm from "../AddForm"
 import Services from "../Services/Services"
 import { services } from "../../assets/data"
 
-function ServicesPage() {
+function ServicesPage({bag, setBag}) {
     let [servicesArray, setServicesArray] = useState([...services])
 
     // DIGER EDIT USULU
@@ -12,7 +12,7 @@ function ServicesPage() {
     return (
         <>
         <AddForm servicesArray={servicesArray} setServicesArray={setServicesArray}/>
-        <Services servicesArray={servicesArray} setServicesArray={setServicesArray}/>
+        <Services bag={bag} setBag={setBag} servicesArray={servicesArray} setServicesArray={setServicesArray}/>
         </>
     )
 }

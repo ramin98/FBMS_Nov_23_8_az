@@ -10,14 +10,17 @@ function ServicesItem(props) {
   let inputServicesDescription = useRef('')
   let form = useRef(null)
   
-  console.log(styles);
-  console.log(styles2);
-
   function handleDelete() {
     let newArr = [...props.servicesArray];
     let elementIndex = newArr.findIndex((item) => item.id === props.obj.id);
     newArr.splice(elementIndex, 1);
     props.setServicesArray(newArr);
+  }
+
+  function addToBag() {
+    let newArr = [...props.bag];
+    newArr.push(props.obj)
+    props.setBag(newArr);
   }
 
   return (
@@ -26,6 +29,7 @@ function ServicesItem(props) {
       <ServicesDescription color="red">
         {props.obj.servicesDescription}
       </ServicesDescription>
+      <button onClick={addToBag}>ADD TO BAG</button>
       <button onClick={handleDelete}>DELETE</button>
       <button onClick={() => {
         setFlag(!flag)

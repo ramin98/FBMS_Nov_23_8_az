@@ -2,7 +2,7 @@ import styled from "styled-components";
 import ServicesItem from "./ServicesItem";
 import { useState } from "react";
 
-function Services({ servicesArray, setServicesArray }) {
+function Services({ servicesArray, setServicesArray, bag, setBag }) {
   let [value, setValue] = useState("");
 
   let filteredArray = servicesArray.filter((item) =>
@@ -19,6 +19,8 @@ function Services({ servicesArray, setServicesArray }) {
             key={item.id}
             servicesArray={servicesArray}
             setServicesArray={setServicesArray}
+            bag={bag}
+            setBag={setBag}
             obj={item}
           />
         ))}
