@@ -9,3 +9,30 @@
   display: none;
 }
 
+.menu div{
+  display: flex;
+  gap: 30px;
+}
+
+.user{
+  width: 100%;
+  padding: 30px;
+  background-color: grey;
+  animation: show 1s 1 linear;
+}
+
+@keyframes show {
+  from{
+    opacity: 0;
+    transform: translate(0px, 100px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+.menu button{
+  padding: 30px;
+}

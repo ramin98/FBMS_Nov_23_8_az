@@ -6,9 +6,9 @@ function Header() {
         <MainHeaderTag>
             <HeaderTag>HEADER</HeaderTag>
             <ul>
-              <li><Link to='/services'>SERVICES</Link></li>
+              <li><Link to='/'>SERVICES</Link></li>
               <li><Link to='/bag'>BAG</Link></li>
-              <li><Link to='/'>ABOUT</Link></li>
+              <li><Link to='/about'>ABOUT</Link></li>
             </ul>
         </MainHeaderTag>
     )
