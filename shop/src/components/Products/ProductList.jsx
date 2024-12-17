@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { MyContext } from "../../App";
-import { getProducts } from "../../reducers/reducerProductsFetchs";
+import { getProducts } from "../../reducers/products/reducerProductsFetchs";
 import ProductItem from "./ProductItem";
 
 function ProductList() {
