@@ -41,7 +41,7 @@ export function reducerAdmin(state, action) {
     let newArr = [...state.admin_products].filter((item) => !filteredArray.includes(item.id))
     console.log(filteredArray)
     deleteAllProductFetch(filteredArray)
-    return { ...state, admin_products: newArr };
+    return { ...state, admin_products: newArr, ids: [] };
   }
 
   return state;
