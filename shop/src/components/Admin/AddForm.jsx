@@ -1,5 +1,6 @@
 import { useContext, useRef } from "react";
 import { MyContext } from "../../App";
+import { addProductFetch } from "../../reducers/admin/adminFetchs";
 
 function AddForm() {
   let { adminDispatch } = useContext(MyContext);
@@ -9,12 +10,20 @@ function AddForm() {
   function handleAddForm(ev) {
     ev.preventDefault();
     let product = Object.fromEntries([...new FormData(ev.target)]);
-    delete product.url
-    let formData = new FormData()
-    formData.append('data', JSON.stringify(product))
-    formData.append('file', url.current.files[0])
 
-    adminDispatch({ type: "ADD", payload: formData });
+    let fileReader = new FileReader();
+
+    fileReader.onload = (ev) => {
+      product.url = ev.target.result;
+
+      let formData = new FormData();
+      formData.append("data", JSON.stringify(product));
+      formData.append("file", url.current.files[0]);
+
+      addProductFetch(formData, adminDispatch, product);
+    };
+
+    fileReader.readAsDataURL(url.current.files[0])
   }
 
   return (

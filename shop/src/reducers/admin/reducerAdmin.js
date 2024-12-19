@@ -8,7 +8,9 @@ export let initialObjectAdmin = {
     if (action.type === "GET PRODUCTS") {
       return { ...state, admin_products: action.payload };     
     }else if(action.type === "ADD"){
-        addProductFetch(action.payload)
+        let newArr = [...state.admin_products]
+        newArr.push(action.payload)
+        return { ...state, admin_products: newArr };     
     }
 
     return state;
