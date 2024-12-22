@@ -1,18 +1,21 @@
-import { useContext, useEffect } from "react";
-import { MyContext } from "../../App";
-import { getProducts } from "../../reducers/products/reducerProductsFetchs";
+import { useEffect } from "react";
 import ProductItem from "./ProductItem";
+import { useDispatch, useSelector } from "react-redux";
+import {getProducts} from '../../store/reducers/products/reducerProductsFetchs'
 
 function ProductList() {
-    let {productsState, productsDispatch} = useContext(MyContext)
+
+   let products = useSelector((state) => state.products.products)
+   console.log(products)
+   let dispatch = useDispatch()
 
     useEffect(() => {
-        getProducts(productsDispatch)
+        getProducts(dispatch)
     }, [])
  
     return (
       <ul>
-        {productsState.products.map((item) => <ProductItem key={item.id} {...item}/>)}
+        {products.map((item) => <ProductItem key={item.id} {...item}/>)}
       </ul>
     );
   }
